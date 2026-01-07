@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Freedom Network</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+header {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+li {
+    margin-bottom: 8px;
+}
+.highlight {
+    background: #eef2ff;
+    padding: 15px;
+    border-left: 4px solid #4f46e5;
+    margin: 20px 0;
+}
+button {
+    background-color: #16a34a;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+}
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>About Freedom Network</h1>
+<p>Discover the mission, vision, and system behind our platform</p>
+</header>
+
+<main>
+
+<section>
+<h2>Our Mission</h2>
+<p>
+ Freedom Network is a **community-driven system** designed to help ordinary people earn consistent online income. 
+It provides a structured leveling system that ensures members advance step-by-step, unlocking new circles, responsibilities, and financial rewards.
+</p>
+<p>
+Our mission is simple: <strong>to give everyone the opportunity to earn, learn, and grow</strong> in a digital world, 
+regardless of prior experience, location, or resources.
+</p>
+<div class="highlight">
+<strong>Core Idea:</strong> Empower members with knowledge first, then earnings follow naturally.
+</div>
+</section>
+
+<section>
+<h2>Why Freedom Network Exists?</h2>
+<p>
+Many online platforms fail because they promise instant wealth without structure or guidance. Freedom Network was created to **solve this problem**. 
+We provide transparency, trust, and a step-by-step system that allows members to understand exactly how money flows.
+</p>
+<ul>
+<li>Members learn how the system works before earning</li>
+<li>Every level and circle has clear goals</li>
+<li>Progress is measurable, fair, and achievable</li>
+<li>Collaboration and teamwork are rewarded</li>
+</ul>
+</section>
+
+<section>
+<h2>The Level Circle System</h2>
+<p>
+The Level Circle System is the backbone of Freedom Network. It is **designed for structured growth**:
+</p>
+<ul>
+<li>Begin at Level 1 and progress to level 12</li>
+<li>You don't need to refer anyone to earn rewards</li>
+<li>You will advance based on system activity and your own learning</li>
+<li>When you reach level 12, You will earn rewards, and you can renew your membership and continue earning</li>
+<li>Transparency ensures everyone sees how earnings and progress are calculated</li>
+</ul>
+<p>Your ₦6000 registration fee is strategically multiplied across 12 levels. You receive 30% of the total amount distributed across all levels, while the remaining 70% is used to fund paid advertising and platform maintenance.
+  This ensures the platform remains sustainable and continues to grow, benefiting all members.
+</p>
+<div class="highlight">
+<strong>Note:</strong> Unlike schemes that hide processes, Freedom Network teaches the logic behind each earning opportunity.
+</div>
+</section>
+
+<section>
+<h2>Why Our System Works</h2>
+<p>
+The combination of **education + structured earning + community support** ensures that:
+</p>
+<ul>
+<li>Members understand the value of their work</li>
+<li>Everyone progresses at their own pace</li>
+<li>Fraud and scams are minimized</li>
+<li>Long-term growth and financial literacy are emphasized</li>
+</ul>
+<p>
+We believe in **building trust first**. Members grow financially only after understanding the system.
+</p>
+</section>
+
+<section>
+<h2>Final Thoughts</h2>
+<p>
+Freedom Network is more than a platform — it is a **movement to empower individuals digitally**. 
+By combining structured levels, teamwork, and proper guidance, members can earn legitimately, learn valuable skills, and build a sustainable online future.
+</p>
+</section>
+
+<section style="text-align:center">
+<button id="completeBtn">Mark Lesson as Completed</button>
+<p><a href="learning_dashboard.html">Back to Dashboard</a></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Freedom Network. All rights reserved.</p>
+</footer>
+
+<script>
+// LESSON PROGRESS SCRIPT
+const LESSON_ID = "our_mission";
+const btn = document.getElementById("completeBtn");
+
+if (localStorage.getItem(LESSON_ID) === "completed") {
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+}
+
+btn.addEventListener("click", () => {
+    localStorage.setItem(LESSON_ID, "completed");
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+    alert("Progress saved! Returning to Dashboard.");
+    window.location.href = "learning_dashboard.html";
+});
+</script>
+
+</body>
+</html>

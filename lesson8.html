@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maximizing Income Through Referrals — Freedom Network</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+header {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+li {
+    margin-bottom: 8px;
+}
+.highlight {
+    background: #eef2ff;
+    padding: 15px;
+    border-left: 4px solid #4f46e5;
+    margin: 20px 0;
+}
+button {
+    background-color: #16a34a;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+}
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Maximizing Income Through Referrals</h1>
+<p>Learn how to grow your earnings by helping others succeed</p>
+</header>
+
+<main>
+
+<section>
+<h2>Understanding the Referral System</h2>
+<p>
+Referrals are a key part of structured earning platforms like SmartLink (coming soon). By inviting others to join, you can earn commissions or bonuses while helping them start their journey.
+</p>
+<ul>
+<li>Referrals reward effort and networking</li>
+<li>They expand your team and income potential</li>
+<li>Every member benefits when the system grows responsibly</li>
+</ul>
+<div class="highlight">
+<strong>Insight:</strong> A strong referral network multiplies your earnings over time.
+</div>
+</section>
+
+<section>
+<h2>Best Practices for Referrals</h2>
+<p>Follow these strategies to maximize your referral income:</p>
+<ul>
+<li>Invite people who are genuinely interested in learning</li>
+<li>Educate your referrals on how the system works</li>
+<li>Share your experience and success stories</li>
+<li>Support your team members to complete lessons and progress</li>
+<li>Be honest—don’t overpromise earnings</li>
+</ul>
+</section>
+
+<section>
+<h2>Ethical Referrals Matter</h2>
+<p>
+The goal is sustainable income, not short-term exploitation. Ethical referrals protect your reputation and the system’s integrity.
+</p>
+<ul>
+<li>Never pressure someone to join</li>
+<li>Focus on teaching rather than selling</li>
+<li>Encourage proper learning before chasing rewards</li>
+<li>Celebrate achievements collectively</li>
+</ul>
+<div class="highlight">
+<strong>Key Tip:</strong> Ethical referrals create long-term relationships and recurring income.
+</div>
+</section>
+
+<section>
+<h2>Tracking Your Referral Progress</h2>
+<p>
+Most platforms provide dashboards to monitor your referrals, commissions, and team performance. Use these tools to:
+</p>
+<ul>
+<li>See who has joined under you</li>
+<li>Track your earnings in real-time</li>
+<li>Identify members who may need guidance</li>
+<li>Plan your next outreach and support strategy</li>
+</ul>
+</section>
+
+<section>
+<h2>Action Steps to Maximize Earnings</h2>
+<ul>
+<li>Create a clear message explaining the platform</li>
+<li>Help your referrals complete lessons and understand the system</li>
+<li>Regularly communicate with your team</li>
+<li>Share learning resources and updates</li>
+<li>Focus on growth, not shortcuts</li>
+</ul>
+<div class="highlight">
+<strong>Remember:</strong> Helping others succeed increases your own success.
+</div>
+</section>
+
+<section style="text-align:center">
+<button id="completeBtn">Mark Lesson as Completed</button>
+<p><a href="learning_dashboard.html">Back to Dashboard</a></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Freedom Network. All rights reserved.</p>
+</footer>
+
+<script>
+// LESSON PROGRESS SCRIPT
+const LESSON_ID = "lesson8";
+const btn = document.getElementById("completeBtn");
+
+if (localStorage.getItem(LESSON_ID) === "completed") {
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+}
+
+btn.addEventListener("click", () => {
+    localStorage.setItem(LESSON_ID, "completed");
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+    alert("Progress saved! Returning to Dashboard.");
+    window.location.href = "learning_dashboard.html";
+});
+</script>
+
+</body>
+</html>

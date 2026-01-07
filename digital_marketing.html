@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital & Affiliate Marketing — Freedom Network</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+header {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+li {
+    margin-bottom: 8px;
+}
+.highlight {
+    background: #eef2ff;
+    padding: 15px;
+    border-left: 4px solid #4f46e5;
+    margin: 20px 0;
+}
+button {
+    background-color: #16a34a;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+}
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Digital & Affiliate Marketing</h1>
+<p>Building sustainable online income the right way</p>
+</header>
+
+<main>
+
+<section>
+<h2>The Reality of Online Income</h2>
+<p>
+Digital and affiliate marketing are not magic. They are skills you learn, apply, and improve over time. Many people believe online income is instant — but the truth is, it requires knowledge, strategy, and consistent action.
+</p>
+<p>
+The internet offers opportunities for anyone willing to learn. You can sell products, promote services, or create content that earns revenue — but you need the right tools and understanding.
+</p>
+</section>
+
+<section>
+<h2>What is Digital Marketing?</h2>
+<p>
+Digital marketing is the process of promoting products, services, or content online using websites, social media, email, search engines, and ads. It allows businesses and individuals to reach a global audience.
+</p>
+<p>
+Key elements include:
+</p>
+<ul>
+<li>Content creation (blogs, videos, social posts)</li>
+<li>Social media management</li>
+<li>Email marketing campaigns</li>
+<li>Paid ads (Facebook, Instagram, Google)</li>
+<li>Search Engine Optimization (SEO)</li>
+</ul>
+<div class="highlight">
+<strong>Tip:</strong> Start small — master one channel at a time, like Instagram or email campaigns.
+</div>
+</section>
+
+<section>
+<h2>Understanding Affiliate Marketing</h2>
+<p>
+Affiliate marketing allows you to earn a commission by promoting other people’s products or services. You don’t create the product, you just connect customers with it. When someone buys through your referral link, you earn.
+</p>
+<ul>
+<li>Promote products you trust</li>
+<li>Provide honest recommendations</li>
+<li>Track performance using affiliate dashboards</li>
+<li>Focus on building an audience</li>
+</ul>
+<p>
+This is a powerful way to generate online income because it leverages existing products and infrastructure while you focus on marketing.
+</p>
+</section>
+
+<section>
+<h2>Essential Skills to Succeed</h2>
+<p>To succeed in digital and affiliate marketing, focus on these areas:</p>
+<ul>
+<li>Content creation that provides value</li>
+<li>Audience building and engagement</li>
+<li>Running social media ads</li>
+<li>Email marketing and list building</li>
+<li>Understanding analytics to improve results</li>
+</ul>
+<div class="highlight">
+<strong>Reminder:</strong> Quick money schemes rarely work. Focus on learning, testing, and improving your skills consistently.
+</div>
+</section>
+
+<section style="text-align:center">
+<button id="completeBtn">Mark Lesson as Completed</button>
+<p><a href="learning_dashboard.html">Back to Dashboard</a></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Freedom Network. All rights reserved.</p>
+</footer>
+
+<script>
+// LESSON PROGRESS SCRIPT
+const LESSON_ID = "digital_marketing";
+const btn = document.getElementById("completeBtn");
+
+if (localStorage.getItem(LESSON_ID) === "completed") {
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+}
+
+btn.addEventListener("click", () => {
+    localStorage.setItem(LESSON_ID, "completed");
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+    alert("Progress saved! Returning to Dashboard.");
+    window.location.href = "learning_dashboard.html";
+});
+</script>
+
+</body>
+</html>

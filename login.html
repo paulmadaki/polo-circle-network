@@ -1,0 +1,43 @@
+<!-- ========================= login.html ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Freedom Network</title>
+<link rel="icon" href="Images/favicon-16x16.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/@supabase/supabase-js"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+<div class="bg-white p-6 rounded shadow w-96">
+<h1 class="text-xl font-bold mb-4">Login</h1>
+<input id="email" type="email" placeholder="Email" class="p-2 border w-full mb-3 rounded" />
+<div class="relative mb-3">
+	<input id="password" type="password" placeholder="Password" class="p-2 border w-full rounded" />
+	<button type="button" id="togglePassword" aria-label="Show password" class="absolute right-2 top-1/2 -translate-y-1/2 text-sm text-gray-600">Show</button>
+</div>
+<button id="loginBtn" class="bg-blue-600 text-white w-full py-2 rounded">Login</button>
+<p class="text-center mt-3 text-sm">Don't have an account? <a href="signup.html" class="text-blue-600 underline">Sign up</a></p>
+</div>
+<script>
+// Inline show/hide password logic for login page
+;(function(){
+	const pwd = document.getElementById('password');
+	const btn = document.getElementById('togglePassword');
+	if (!pwd || !btn) return;
+	btn.addEventListener('click', () => {
+		const isPwd = pwd.getAttribute('type') === 'password';
+		pwd.setAttribute('type', isPwd ? 'text' : 'password');
+		btn.textContent = isPwd ? 'Hide' : 'Show';
+		btn.setAttribute('aria-label', isPwd ? 'Hide password' : 'Show password');
+	});
+})();
+</script>
+<!-- Loading overlay -->
+<div id="loadingOverlay" class="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center hidden z-50">
+	<div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-500"></div>
+</div>
+<script src="/js/login.js"></script>
+</body>
+</html>

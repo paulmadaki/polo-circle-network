@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Freedom Network</title>
+    <link rel="icon" href="Images/favicon-16x16.png">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+<body class="dashboard-body">
+
+    <div id="loadingOverlay" class="overlay hidden">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+            <p class="spinner-text">Loading...</p>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="navbar-container">
+            
+
+            <nav id="desktopNav" class="desktop-nav" role="navigation" aria-label="Main navigation">
+                <a href="history.html">Account History</a>
+                <a href="account.html">Summit Account</a>
+                <a href="about.html">About</a>
+                <a href="index.html">Home</a>
+                <a href="learning_dashboard.html">Study Area</a>
+                <a href="contact.html">Contact us</a>
+            </nav>
+
+            <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle navigation">
+                <span id="iconOpen">☰</span>
+                <span id="iconClose" class="hidden">✕</span>
+            </button>
+        </div>
+
+        <div id="mobileMenu" class="mobile-menu hidden">
+            <nav id="mobileNav" role="navigation" aria-label="Mobile navigation">
+                <a href="history.html">Account History</a>
+                <a href="account.html">Summit Account</a>
+                <a href="about.html">About</a>
+                <a href="index.html">Home</a>
+                <a href="learning_dashboard.html">Study Area</a>
+                <a href="contact.html">Contact us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="page-heading">Welcome to your Dashboard</h1>
+
+        <section class="card profile-card">
+            <p><strong>Name:</strong> <span id="name">...</span></p>
+            <p><strong>Email:</strong> <span id="email">...</span></p>
+            <p><strong>Circle:</strong> <span id="current-circle">0</span></p>
+            <p><strong>Level:</strong> <span id="current-level">0</span></p>
+            <p><strong>Earnings:</strong> ₦<span id="earnings">0.00</span></p>
+            <p id="emptyEarningsMsg" class="empty-msg hidden">
+                You haven't earned any rewards yet. Complete levels to see your balance grow!
+            </p>
+        </section>
+
+        <section id="renewalSection" class="alert-box renewal-box" style="display:none;">
+            <h2 class="alert-title">Renewal/Upgrade Required</h2>
+            <button id="renewBtn" class="btn btn-primary">
+                Renew for ₦6,000 to start next Circle
+            </button>
+        </section>
+
+        <div class="instruction-text">
+            <p>
+                When you reach <strong>Level 12</strong>, click the <strong>ASSIMILATE</strong> button below to move to <strong>Circle 2</strong>.
+                After assimilating, you will be able to start the next level by renewing your payment. The button will appear once you reach Level 12.
+            </p>
+        </div>
+
+        <section class="card actions-card">
+            <h2 class="card-title">Actions</h2>
+            <div class="button-group">
+                <button id="withdrawBtn" class="btn btn-warning">Withdraw Earnings</button>
+                <button id="completeLevelBtn" class="btn btn-success" hidden>ASSIMILATE & Complete Circle 1</button>
+            </div>
+        </section>
+        
+        <div class="logout-wrapper">
+            <button id="logoutBtn" class="btn btn-danger">Logout</button>
+        </div>
+    </main>
+
+   
+    <script>
+        // Hamburger Toggle Logic
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('hamburgerBtn');
+            const menu = document.getElementById('mobileMenu');
+            const iconOpen = document.getElementById('iconOpen');
+            const iconClose = document.getElementById('iconClose');
+
+            if (btn && menu) {
+                btn.addEventListener('click', function () {
+                    const isHidden = menu.classList.toggle('hidden');
+                    iconOpen.classList.toggle('hidden');
+                    iconClose.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked and set active state
+                const mobileNav = document.getElementById('mobileNav');
+                if (mobileNav) {
+                    mobileNav.querySelectorAll('a').forEach(a => {
+                        a.addEventListener('click', () => {
+                            menu.classList.add('hidden');
+                            iconOpen.classList.remove('hidden');
+                            iconClose.classList.add('hidden');
+                        });
+                    });
+                }
+            }
+
+            // Mark active link based on current path for both desktop and mobile
+            const path = window.location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('#desktopNav a, #mobileNav a').forEach(a => {
+                // Compare only filename portion to handle relative paths
+                const href = a.getAttribute('href')?.split('/').pop();
+                if (href === path) {
+                    a.classList.add('active');
+                    a.setAttribute('aria-current', 'page');
+                }
+            });
+        });
+
+        // Overlay Functions (Maintained for dashboard.js compatibility)
+        window.showLoading = function() {
+            const ov = document.getElementById('loadingOverlay');
+            ov.classList.remove('hidden');
+        };
+        window.hideLoading = function() {
+            const ov = document.getElementById('loadingOverlay');
+            ov.classList.add('hidden');
+        };
+    </script>
+     <script src="/js/dashboard.js"></script>
+
+     <a href="https://chat.whatsapp.com/JAS925JbxNn5oRrs7ONdZV?mode=ems_copy_c'ode&invite_type=link" 
+   class="whatsapp-float" 
+   target="_blank" 
+   aria-label="Chat on WhatsApp">
+   💬
+</a>
+</body>
+</html>

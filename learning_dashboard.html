@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Plan — Freedom Network</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <main class="max-w-4xl mx-auto p-6 mt-10">
+    <h1 class="text-3xl font-bold text-indigo-600 mb-2">My Study Plan</h1>
+    <p class="text-gray-600 mb-8">Track your progress as you master digital skills.</p>
+
+    <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-10">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-semibold text-lg">Overall Course Completion</h2>
+        <span id="progress-percent" class="text-indigo-600 font-bold text-xl">0%</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-3">
+        <div id="progress-bar" class="bg-indigo-600 h-3 rounded-full transition-all duration-700" style="width: 0%"></div>
+      </div>
+    </section>
+
+    <div class="space-y-4">
+      
+      <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="my_story">
+        <div>
+          <h3 class="font-bold text-gray-700">1. My Story & Vision</h3>
+          <a href="my_story.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+        </div>
+        <div class="status-icon text-gray-300 text-2xl">○</div>
+      </div>
+
+      <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson_digital">
+        <div>
+          <h3 class="font-bold text-gray-700">2. Digital & Affiliate Marketing</h3>
+          <a href="digital_marketing.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+        </div>
+        <div class="status-icon text-gray-300 text-2xl">○</div>
+      </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="our_mission">
+            <div>
+            <h3 class="font-bold text-gray-700">3. Our Mission & Values</h3>
+            <a href="our_mission.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+
+      </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson4">
+            <div>
+            <h3 class="font-bold text-gray-700">4. How Online Money Works</h3>
+            <a href="lesson4.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+
+        </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson5">
+            <div>
+            <h3 class="font-bold text-gray-700">5. The Power of Consistency</h3>
+            <a href="lesson5.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+
+        </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson6">
+            <div>
+            <h3 class="font-bold text-gray-700">6. Building Trust and Team work</h3>
+            <a href="lesson6.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+        </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson7">
+            <div>
+            <h3 class="font-bold text-gray-700">7. Avoiding Scams & False Promises</h3>
+            <a href="lesson7.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+        </div>
+
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson8">
+            <div>
+            <h3 class="font-bold text-gray-700">8. Maximizing Income Through Referrals</h3>
+            <a href="lesson8.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+        </div>
+        <div class="lesson-card bg-white p-5 rounded-lg shadow-sm border flex items-center justify-between" data-id="lesson9">
+            <div>
+            <h3 class="font-bold text-gray-700">9. Long-Term Growth & Mindset</h3>
+            <a href="lesson9.html" class="text-indigo-500 hover:underline text-sm">View Lesson</a>
+            </div>
+            <div class="status-icon text-gray-300 text-2xl">○</div>
+  </main>
+
+  <script>
+    function updateDashboard() {
+      const lessons = document.querySelectorAll('.lesson-card');
+      let completedCount = 0;
+
+      lessons.forEach(card => {
+        const id = card.getAttribute('data-id');
+        const icon = card.querySelector('.status-icon');
+        
+        if (localStorage.getItem(id) === "completed") {
+          completedCount++;
+          // Update card style to show it's done
+          card.classList.add('border-green-200', 'bg-green-50');
+          icon.innerHTML = "✅";
+          icon.classList.remove('text-gray-300');
+        }
+      });
+
+      // Calculate Percentage
+      const percent = Math.round((completedCount / lessons.length) * 100);
+      document.getElementById('progress-bar').style.width = percent + "%";
+      document.getElementById('progress-percent').innerText = percent + "%";
+    }
+
+    // Run when page opens
+    window.onload = updateDashboard;
+  </script>
+</body>
+</html>

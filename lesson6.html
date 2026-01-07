@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building Trust & Teamwork — Freedom Network</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+header {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+li {
+    margin-bottom: 8px;
+}
+.highlight {
+    background: #eef2ff;
+    padding: 15px;
+    border-left: 4px solid #4f46e5;
+    margin: 20px 0;
+}
+button {
+    background-color: #16a34a;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+}
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Building Trust & Teamwork</h1>
+<p>Why collaboration is essential for online success</p>
+</header>
+
+<main>
+
+<section>
+<h2>Why Trust is the Foundation</h2>
+<p>
+In any structured earning system like Freedom Network, trust is essential. Members must rely on each other and the system itself to ensure fair and predictable outcomes.
+</p>
+<ul>
+<li>Trust ensures referrals and efforts are acknowledged</li>
+<li>It reduces conflict and misunderstanding</li>
+<li>It encourages transparency and honesty</li>
+</ul>
+<div class="highlight">
+<strong>Remember:</strong> Trust is earned by consistent action, clear communication, and integrity.
+</div>
+</section>
+
+<section>
+<h2>The Importance of Teamwork</h2>
+<p>
+Teamwork accelerates progress. Working together allows members to share knowledge, help each other, and maximize earnings collectively.
+</p>
+<ul>
+<li>Sharing strategies increases group success</li>
+<li>Helping others builds credibility and respect</li>
+<li>Collaboration creates faster learning and skill development</li>
+<li>Teamwork ensures everyone progresses fairly through the system</li>
+</ul>
+</section>
+
+<section>
+<h2>Practical Ways to Build Trust</h2>
+<ul>
+<li>Be honest in all communications and actions</li>
+<li>Deliver on your promises within the system</li>
+<li>Share knowledge and guide new members</li>
+<li>Report problems or inconsistencies promptly</li>
+<li>Follow the rules and structure of the Level Circle System</li>
+</ul>
+<div class="highlight">
+<strong>Key Tip:</strong> Your reputation is your most valuable asset. Protect it by acting responsibly.
+</div>
+</section>
+
+<section>
+<h2>Practical Ways to Strengthen Teamwork</h2>
+<ul>
+<li>Mentor new members and share your experience</li>
+<li>Collaborate on tasks and referrals</li>
+<li>Encourage a culture of support rather than competition</li>
+<li>Celebrate collective achievements</li>
+<li>Learn from team challenges to improve processes</li>
+</ul>
+</section>
+
+<section>
+<h2>Benefits of Trust & Teamwork</h2>
+<p>
+When trust and teamwork are prioritized:
+</p>
+<ul>
+<li>Income distribution becomes predictable and fair</li>
+<li>Members remain motivated and engaged</li>
+<li>Skill sharing accelerates growth</li>
+<li>The system is sustainable long-term</li>
+</ul>
+<div class="highlight">
+<strong>Insight:</strong> Trust + Teamwork = exponential growth potential for all members.
+</div>
+</section>
+
+<section style="text-align:center">
+<button id="completeBtn">Mark Lesson as Completed</button>
+<p><a href="learning_dashboard.html">Back to Dashboard</a></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Freedom Network. All rights reserved.</p>
+</footer>
+
+<script>
+// LESSON PROGRESS SCRIPT
+const LESSON_ID = "lesson6";
+const btn = document.getElementById("completeBtn");
+
+if (localStorage.getItem(LESSON_ID) === "completed") {
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+}
+
+btn.addEventListener("click", () => {
+    localStorage.setItem(LESSON_ID, "completed");
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+    alert("Progress saved! Returning to Dashboard.");
+    window.location.href = "learning_dashboard.html";
+});
+</script>
+
+</body>
+</html>

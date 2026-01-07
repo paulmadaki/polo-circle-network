@@ -1,0 +1,11 @@
+name = "floral-bar-7a5c"
+main = "workers.dev"
+compatibility_date = "2024-12-01"
+
+#  Worker environment variables (bindings)
+[vars]
+SUPABASE_URL = "https://sjfkavspjaajyymmfjic.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNqZmthdnNwamFhanl5bW1mamljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3OTk4NjksImV4cCI6MjA4MDM3NTg2OX0.kYSG-UNeZV7hwB1ozbQwKNCcGs68FUO1PUrigrUFAkA"
+
+#  Secure secrets (you will add these using wrangler secret put)
+# SUPABASE_SERVICE_ROLE_KEY

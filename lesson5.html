@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Power of Consistency & Learning — Freedom Network</title>
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+header {
+    background: #0f172a;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+section {
+    margin-bottom: 50px;
+}
+h2 {
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+p {
+    margin-bottom: 15px;
+}
+ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+li {
+    margin-bottom: 8px;
+}
+.highlight {
+    background: #eef2ff;
+    padding: 15px;
+    border-left: 4px solid #4f46e5;
+    margin: 20px 0;
+}
+button {
+    background-color: #16a34a;
+    color: #fff;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+button:hover {
+    background-color: #15803d;
+    transform: scale(1.05);
+}
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+}
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+a {
+    color: #4f46e5;
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>The Power of Consistency & Learning</h1>
+<p>Why persistent effort is the key to online success</p>
+</header>
+
+<main>
+
+<section>
+<h2>Why Consistency Matters</h2>
+<p>
+Online success doesn’t come from one-time efforts. It comes from **consistent action over time**.  
+Consistency compounds like interest in a bank: small daily actions accumulate into significant results.
+</p>
+<ul>
+<li>Daily practice builds skills faster than sporadic effort</li>
+<li>Consistent tracking reveals patterns and improvement opportunities</li>
+<li>Consistency builds credibility with your team and clients</li>
+</ul>
+<div class="highlight">
+<strong>Key Insight:</strong> Treat each day as a building block — even small steps matter.
+</div>
+</section>
+
+<section>
+<h2>Learning is the Foundation</h2>
+<p>
+Before you can earn consistently, you must **master the skills** that generate income. Learning is not optional — it’s mandatory.
+</p>
+<ul>
+<li>Learn marketing, social media management, content creation, and affiliate strategies</li>
+<li>Understand tools that make your work efficient and trackable</li>
+<li>Keep up-to-date with trends in digital business</li>
+</ul>
+<p>
+Remember: knowledge without action is wasted. Action without knowledge is risky. The balance creates real growth.
+</p>
+</section>
+
+<section>
+<h2>Combining Learning with Consistency</h2>
+<p>
+When you combine learning with consistent effort, you unlock **compound results**:
+</p>
+<ul>
+<li>Your skills improve faster</li>
+<li>Opportunities increase as people notice your dedication</li>
+<li>You reduce mistakes and increase efficiency</li>
+<li>Long-term income grows steadily, not randomly</li>
+</ul>
+<div class="highlight">
+<strong>Pro Tip:</strong> Set a schedule for learning and working. Even 1–2 hours daily, done consistently, creates huge results over weeks and months.
+</div>
+</section>
+
+<section>
+<h2>How Freedom Network Supports This</h2>
+<p>
+Our system encourages **structured progression**. Each level requires effort, learning, and collaboration:
+</p>
+<ul>
+<li>Complete tasks to advance to higher levels</li>
+<li>Learn from guides, mentors, and community members</li>
+<li>Track your progress and earnings transparently</li>
+<li>Collaborate to accelerate growth for yourself and others</li>
+</ul>
+<p>
+This ensures that consistent learners always move ahead while those who skip steps may stall.
+</p>
+</section>
+
+<section>
+<h2>Action Steps</h2>
+<ul>
+<li>Dedicate a fixed time daily to learning and performing tasks</li>
+<li>Follow the Level Circle System exactly as designed</li>
+<li>Keep a personal progress log for skills learned and tasks completed</li>
+<li>Share knowledge with others to reinforce learning and teamwork</li>
+<li>Review your progress weekly and adjust your strategy</li>
+</ul>
+<div class="highlight">
+<strong>Remember:</strong> Consistency + Learning = Long-Term Online Success.
+</div>
+</section>
+
+<section style="text-align:center">
+<button id="completeBtn">Mark Lesson as Completed</button>
+<p><a href="learning_dashboard.html">Back to Dashboard</a></p>
+</section>
+
+</main>
+
+<footer>
+<p>&copy; 2026 Freedom Network. All rights reserved.</p>
+</footer>
+
+<script>
+// LESSON PROGRESS SCRIPT
+const LESSON_ID = "lesson5";
+const btn = document.getElementById("completeBtn");
+
+if (localStorage.getItem(LESSON_ID) === "completed") {
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+}
+
+btn.addEventListener("click", () => {
+    localStorage.setItem(LESSON_ID, "completed");
+    btn.innerText = "✓ Lesson Completed";
+    btn.disabled = true;
+    alert("Progress saved! Returning to Dashboard.");
+    window.location.href = "learning_dashboard.html";
+});
+</script>
+
+</body>
+</html>

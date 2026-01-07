@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Circle Network</title>
+  <link rel="stylesheet" href="css/sign_up.css">
+  <link rel="icon" href="images/favicon-16x16.png" type="image/png">
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+</head>
+
+<body class="auth-page">
+
+  <main class="auth-container">
+    <header class="hero-header">
+      <h2 class="hero-title">More Than a Platform</h2>
+      <p class="hero-subtitle">A system that teaches before it pays</p>
+    </header>
+
+    <p class="intro-text">
+      Sign up to gain access to structured learning, community guidance, and exclusive features
+      designed to prepare you for sustainable online income.
+    </p>
+
+    <h1 class="form-title">Create Your Account</h1>
+
+    <form id="registerForm">
+      <input id="fullName" type="text" placeholder="Full Name" class="form-input" required />
+
+      <p class="warning-text">
+        Please ensure your full name matches your bank account name, as this is crucial for successful withdrawals.
+      </p>
+
+      <input id="email" type="email" placeholder="Email" class="form-input" required />
+
+      <div class="password-wrapper">
+        <input id="password" type="password" placeholder="Password" class="form-input" required />
+        <button type="button" id="togglePassword" class="toggle-btn">Show</button>
+      </div>
+
+      <div class="strength-meter-container">
+        <div class="strength-bg">
+          <div id="strengthBar" class="strength-bar"></div>
+        </div>
+        <p id="strengthText" class="strength-label"></p>
+      </div>
+
+      <input id="location" type="text" placeholder="Location" class="form-input" />
+      <input id="whatsapp" type="text" placeholder="WhatsApp Number" class="form-input" />
+
+      <p class="terms-text">
+        By clicking "Sign Up", you agree to our Terms of Service and Privacy Policy.
+        Please read them carefully before proceeding.
+        <a href="terms.html">Terms of Service</a> and
+        <a href="privacy.html">Privacy Policy</a>.
+      </p>
+
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+
+    <p class="login-link">
+      Already have an account? <a href="login.html">Login</a>
+    </p>
+  </main>
+
+  <div id="loadingOverlay" class="overlay hidden">
+    <div class="spinner"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Freedom Network. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Show / Hide password
+    (() => {
+      const pwd = document.getElementById('password');
+      const btn = document.getElementById('togglePassword');
+      btn.addEventListener('click', () => {
+        const isPwd = pwd.type === 'password';
+        pwd.type = isPwd ? 'text' : 'password';
+        btn.textContent = isPwd ? 'Hide' : 'Show';
+      });
+    })();
+
+    // Password strength checker
+    const passwordInput = document.getElementById("password");
+    const strengthBar = document.getElementById("strengthBar");
+    const strengthText = document.getElementById("strengthText");
+
+    passwordInput.addEventListener("input", () => {
+      const value = passwordInput.value;
+      let strength = 0;
+
+      if (value.length >= 8) strength++;
+      if (/[A-Z]/.test(value)) strength++;
+      if (/[a-z]/.test(value)) strength++;
+      if (/[0-9]/.test(value)) strength++;
+      if (/[^A-Za-z0-9]/.test(value)) strength++;
+
+      // Reset classes
+      strengthBar.className = "strength-bar";
+      strengthText.className = "strength-label";
+
+      if (strength <= 2) {
+        strengthBar.style.width = "33%";
+        strengthBar.classList.add("weak");
+        strengthText.textContent = "Weak password";
+        strengthText.classList.add("text-weak");
+      } else if (strength <= 4) {
+        strengthBar.style.width = "66%";
+        strengthBar.classList.add("medium");
+        strengthText.textContent = "Medium strength";
+        strengthText.classList.add("text-medium");
+      } else {
+        strengthBar.style.width = "100%";
+        strengthBar.classList.add("strong");
+        strengthText.textContent = "Strong password";
+        strengthText.classList.add("text-strong");
+      }
+    });
+
+    document.getElementById("registerForm").addEventListener("submit", (e) => {
+      const value = passwordInput.value;
+      const strong = value.length >= 8 && /[A-Z]/.test(value) && /[a-z]/.test(value) && /[0-9]/.test(value) && /[^A-Za-z0-9]/.test(value);
+      if (!strong) {
+        e.preventDefault();
+        alert("Password must be strong (8+ chars, uppercase, lowercase, number, symbol).");
+      }
+    });
+  </script>
+  <script src="/js/signup.js"></script>
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/68b61d34d258c126a900918a/1je7gkg19';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
