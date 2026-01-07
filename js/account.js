@@ -157,7 +157,7 @@ if (form) {
       resetSubmitButton();
 
       setTimeout(() => {
-        window.location.href = "/dashboard.html";
+        window.location.href = "./dashboard.html";
       }, 1200);
     } catch (err) {
       console.error(err);
