@@ -237,7 +237,7 @@ footer p {
 @media (max-width: 500px) {
   .hero h1 {
     font-size: 75%;
-    font-weight: lighter;
+    font-weight: 800;
     
   }
 }
