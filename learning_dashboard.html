@@ -11,6 +11,9 @@
   <main class="max-w-4xl mx-auto p-6 mt-10">
     <h1 class="text-3xl font-bold text-indigo-600 mb-2">My Study Plan</h1>
     <p class="text-gray-600 mb-8">Track your progress as you master digital skills.</p>
+    <div class="mb-6">
+      <button id="back-dashboard-btn" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Return to Dashboard</button>
+    </div>
 
     <section class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-10">
       <div class="flex justify-between items-center mb-4">
@@ -120,10 +123,17 @@
       const percent = Math.round((completedCount / lessons.length) * 100);
       document.getElementById('progress-bar').style.width = percent + "%";
       document.getElementById('progress-percent').innerText = percent + "%";
+      // No automatic redirect — users can use the Return button
     }
 
     // Run when page opens
-    window.onload = updateDashboard;
+    window.onload = function() {
+      updateDashboard();
+      const backBtn = document.getElementById('back-dashboard-btn');
+      if (backBtn) {
+        backBtn.addEventListener('click', () => { window.location.href = './dashboard.html'; });
+      }
+    };
   </script>
 </body>
 </html>
