@@ -7,7 +7,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const WORKER_BASE = "https://floral-bar-7a5c.passproduction16.workers.dev";
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-const PAYSTACK_PUBLIC_KEY = "pk_test_12df58e07e4fab48a969987ffe965bd683792a17";
+const PAYSTACK_PUBLIC_KEY = "pk_live_98e672f88208c8d3bb0c4bc7439883ad7e29ad94";
 const RENEWAL_FEE = 6000;
 const REWARD_AMOUNT = 21600; 
 const MAX_LEVEL = 12;
