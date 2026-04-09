@@ -129,6 +129,20 @@ body {
     gap: 0.5rem;
 }
 
+/* Referral button styles */
+.referral-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background: #0ea5a4;
+    color: #fff;
+    font-weight: 500;
+}
+.referral-btn:hover { opacity: 0.95; }
+
 .logout-wrapper {
     display: flex;
     justify-content: flex-end;
